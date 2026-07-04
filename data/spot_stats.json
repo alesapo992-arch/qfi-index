@@ -1,37 +1,37 @@
 {
-  "last_update": "2026-07-03T19:24:40.768883+00:00",
+  "last_update": "2026-07-04T03:24:42.717800+00:00",
   "market": {
-    "fear_greed": 21,
+    "fear_greed": 22,
     "symbols": {
       "BTC/USDT": {
-        "change_24h_pct": 1.25,
-        "change_7d_pct": 3.56,
+        "change_24h_pct": 1.84,
+        "change_7d_pct": 4.21,
         "regime": "neutral"
       },
       "ETH/USDT": {
-        "change_24h_pct": 2.7,
-        "change_7d_pct": 10.6,
+        "change_24h_pct": 2.52,
+        "change_7d_pct": 11.16,
         "regime": "neutral"
       }
     }
   },
   "spot_portfolio": {
-    "equity_usdt": 27452.66,
-    "usdt_free": 21744.73,
-    "usdt_total": 21744.73,
+    "equity_usdt": 27476.58,
+    "usdt_free": 21611.29,
+    "usdt_total": 21611.29,
     "positions": {
       "BTC/USDT": {
-        "amount": 0.062611,
-        "avg_price": 63317.51,
-        "invested_usdt": 3964.37,
+        "amount": 0.064085,
+        "avg_price": 63300.09,
+        "invested_usdt": 4056.59,
         "realized_pnl_usdt": 0.0,
         "last_tp_price": 0.0,
         "in_cooldown": false
       },
       "ETH/USDT": {
-        "amount": 1.11369953,
-        "avg_price": 1676.37,
-        "invested_usdt": 1866.97,
+        "amount": 1.13619953,
+        "avg_price": 1677.82,
+        "invested_usdt": 1906.34,
         "realized_pnl_usdt": 0.0,
         "last_tp_price": 0.0,
         "in_cooldown": false
