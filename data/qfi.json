@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-09-07T16:34:22.060671+00:00",
+  "timestamp": "2026-09-08T04:34:40.452031+00:00",
   "scale": "0-100",
   "version": 2,
-  "qfi": 33,
-  "qfi_display": 33,
-  "qfi_raw": -35,
+  "qfi": 34,
+  "qfi_display": 34,
+  "qfi_raw": -32,
   "zone": "distribution",
   "zone_label": "DISTRIBUTION",
   "zone_label_it": "DISTRIBUZIONE",
@@ -20,27 +20,27 @@
     "emoji": "\u23f8\ufe0f",
     "action": "WAIT FOR CONFIRMATION",
     "strength": "weak",
-    "reason": "QFI 33/100 between 30 and 73",
-    "suggested_position": "6%"
+    "reason": "QFI 34/100 between 30 and 73",
+    "suggested_position": "9%"
   },
   "components": {
     "relative_strength": {
-      "value": -1.0,
+      "value": -0.957,
       "label": "Relative Strength Rotation",
       "weight": 0.35,
       "detail": "Performance 7g BTC/ETH vs cluster speculativi (media semplice)"
     },
     "smart_money_retail": {
-      "value": 0.017,
+      "value": 0.144,
       "label": "Smart Money vs Retail",
       "weight": 0.4,
-      "detail": "Top trader ratio: 1.97 (media 30g: 1.84), F&G: 71"
+      "detail": "Top trader ratio: 2.05 (media 30g: 1.86), F&G: 69"
     },
     "derivatives_pressure": {
-      "value": -0.039,
+      "value": -0.177,
       "label": "Derivatives Pressure",
       "weight": 0.25,
-      "detail": "Funding: 0.002%, OI change: -0.1%"
+      "detail": "Funding: 0.009%, OI change: -0.9%"
     }
   },
   "drivers": [
@@ -48,22 +48,22 @@
       "type": "Rotazione speculativa",
       "direction": "bearish",
       "strength": "strong",
-      "text_it": "I cluster speculativi outperformano BTC/ETH (score: -1.00)",
-      "text_en": "Speculative clusters outperform BTC/ETH (score: -1.00)"
+      "text_it": "I cluster speculativi outperformano BTC/ETH (score: -0.96)",
+      "text_en": "Speculative clusters outperform BTC/ETH (score: -0.96)"
     },
     {
       "type": "Posizionamento allineato",
       "direction": "neutral",
       "strength": "weak",
-      "text_it": "Top trader e retail allineati (ratio 1.97, F&G 71)",
-      "text_en": "Top traders and retail aligned (ratio 1.97, F&G 71)"
+      "text_it": "Top trader e retail allineati (ratio 2.05, F&G 69)",
+      "text_en": "Top traders and retail aligned (ratio 2.05, F&G 69)"
     },
     {
       "type": "Leva bilanciata",
       "direction": "neutral",
       "strength": "weak",
-      "text_it": "Posizionamento futures equilibrato (funding 0.002%)",
-      "text_en": "Balanced futures positioning (funding 0.002%)"
+      "text_it": "Posizionamento futures equilibrato (funding 0.009%)",
+      "text_en": "Balanced futures positioning (funding 0.009%)"
     }
   ],
   "history": [
@@ -201,6 +201,15 @@
       "rot": -1.0,
       "wr": 0.017,
       "lev": -0.039
+    },
+    {
+      "t": "2026-09-08T04:34:40.452031+00:00",
+      "v": 2,
+      "qfi": 34,
+      "raw": -32,
+      "rot": -0.957,
+      "wr": 0.144,
+      "lev": -0.177
     }
   ],
   "data_quality": {
