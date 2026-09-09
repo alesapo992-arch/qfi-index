@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-08T16:35:09.555723+00:00",
+  "timestamp": "2026-09-09T04:40:14.230211+00:00",
   "scale": "0-100",
   "version": 2,
   "qfi": 37,
@@ -25,22 +25,22 @@
   },
   "components": {
     "relative_strength": {
-      "value": -1.0,
+      "value": -0.9,
       "label": "Relative Strength Rotation",
       "weight": 0.35,
       "detail": "Performance 7g BTC/ETH vs cluster speculativi (media semplice)"
     },
     "smart_money_retail": {
-      "value": 0.3,
+      "value": 0.198,
       "label": "Smart Money vs Retail",
       "weight": 0.4,
-      "detail": "Top trader ratio: 2.13 (media 30g: 1.86), F&G: 69"
+      "detail": "Top trader ratio: 2.08 (media 30g: 1.88), F&G: 66"
     },
     "derivatives_pressure": {
-      "value": -0.145,
+      "value": -0.138,
       "label": "Derivatives Pressure",
       "weight": 0.25,
-      "detail": "Funding: 0.007%, OI change: -0.4%"
+      "detail": "Funding: 0.007%, OI change: -0.7%"
     }
   },
   "drivers": [
@@ -48,15 +48,15 @@
       "type": "Rotazione speculativa",
       "direction": "bearish",
       "strength": "strong",
-      "text_it": "I cluster speculativi outperformano BTC/ETH (score: -1.00)",
-      "text_en": "Speculative clusters outperform BTC/ETH (score: -1.00)"
+      "text_it": "I cluster speculativi outperformano BTC/ETH (score: -0.90)",
+      "text_en": "Speculative clusters outperform BTC/ETH (score: -0.90)"
     },
     {
-      "type": "Accumulo smart money",
-      "direction": "bullish",
-      "strength": "moderate",
-      "text_it": "Top trader long (+14.7% vs media 30g) + retail in fear (F&G 69)",
-      "text_en": "Top traders long (+14.7% vs 30d mean) + retail in fear (F&G 69)"
+      "type": "Posizionamento allineato",
+      "direction": "neutral",
+      "strength": "weak",
+      "text_it": "Top trader e retail allineati (ratio 2.08, F&G 66)",
+      "text_en": "Top traders and retail aligned (ratio 2.08, F&G 66)"
     },
     {
       "type": "Leva bilanciata",
@@ -219,6 +219,15 @@
       "rot": -1.0,
       "wr": 0.3,
       "lev": -0.145
+    },
+    {
+      "t": "2026-09-09T04:40:14.230211+00:00",
+      "v": 2,
+      "qfi": 37,
+      "raw": -27,
+      "rot": -0.9,
+      "wr": 0.198,
+      "lev": -0.138
     }
   ],
   "data_quality": {
