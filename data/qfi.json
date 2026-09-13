@@ -1,69 +1,69 @@
 {
-  "timestamp": "2026-09-13T06:14:05.714583+00:00",
+  "timestamp": "2026-09-13T18:14:26.202603+00:00",
   "scale": "0-100",
   "version": 2,
-  "qfi": 57,
-  "qfi_display": 57,
-  "qfi_raw": 14,
-  "zone": "neutral",
-  "zone_label": "NEUTRAL",
-  "zone_label_it": "NEUTRALE",
-  "zone_emoji": "\u26aa",
-  "zone_color": "#9CA3AF",
-  "zone_range": "41-59",
-  "zone_meaning_en": "Balanced market conditions.",
-  "zone_meaning_it": "Condizioni di mercato bilanciate.",
-  "zone_legacy": "equilibrio",
+  "qfi": 61,
+  "qfi_display": 61,
+  "qfi_raw": 22,
+  "zone": "accumulation",
+  "zone_label": "ACCUMULATION",
+  "zone_label_it": "ACCUMULO",
+  "zone_emoji": "\ud83d\udfe1",
+  "zone_color": "#FACC15",
+  "zone_range": "60-72",
+  "zone_meaning_en": "Buyers are building positions.",
+  "zone_meaning_it": "I compratori stanno accumulando.",
+  "zone_legacy": "pressione_positiva",
   "partial": false,
   "signal": {
     "signal": "HOLD",
     "emoji": "\u23f8\ufe0f",
     "action": "WAIT FOR CONFIRMATION",
     "strength": "weak",
-    "reason": "QFI 57/100 between 30 and 73",
-    "suggested_position": "62%"
+    "reason": "QFI 61/100 between 30 and 73",
+    "suggested_position": "72%"
   },
   "components": {
     "relative_strength": {
-      "value": 0.143,
+      "value": 0.409,
       "label": "Relative Strength Rotation",
       "weight": 0.35,
       "detail": "Performance 7g BTC/ETH vs cluster speculativi (media semplice)"
     },
     "smart_money_retail": {
-      "value": 0.351,
+      "value": 0.281,
       "label": "Smart Money vs Retail",
       "weight": 0.4,
-      "detail": "Top trader ratio: 2.23 (media 30g: 1.96), F&G: 61"
+      "detail": "Top trader ratio: 2.18 (media 30g: 1.96), F&G: 61"
     },
     "derivatives_pressure": {
-      "value": -0.189,
+      "value": -0.143,
       "label": "Derivatives Pressure",
       "weight": 0.25,
-      "detail": "Funding: 0.009%, OI change: -1.8%"
+      "detail": "Funding: 0.007%, OI change: -0.7%"
     }
   },
   "drivers": [
     {
-      "type": "Rotazione bilanciata",
-      "direction": "neutral",
-      "strength": "weak",
-      "text_it": "Performance simile tra BTC/ETH e altcoin (score: +0.14)",
-      "text_en": "Similar performance between BTC/ETH and altcoins (score: +0.14)"
-    },
-    {
-      "type": "Accumulo smart money",
+      "type": "Rotazione BTC/ETH",
       "direction": "bullish",
       "strength": "moderate",
-      "text_it": "Top trader long (+13.8% vs media 30g) + retail in fear (F&G 61)",
-      "text_en": "Top traders long (+13.8% vs 30d mean) + retail in fear (F&G 61)"
+      "text_it": "BTC/ETH outperformano i cluster speculativi (score: +0.41)",
+      "text_en": "BTC/ETH outperform speculative clusters (score: +0.41)"
+    },
+    {
+      "type": "Posizionamento allineato",
+      "direction": "neutral",
+      "strength": "weak",
+      "text_it": "Top trader e retail allineati (ratio 2.18, F&G 61)",
+      "text_en": "Top traders and retail aligned (ratio 2.18, F&G 61)"
     },
     {
       "type": "Leva bilanciata",
       "direction": "neutral",
       "strength": "weak",
-      "text_it": "Posizionamento futures equilibrato (funding 0.009%)",
-      "text_en": "Balanced futures positioning (funding 0.009%)"
+      "text_it": "Posizionamento futures equilibrato (funding 0.007%)",
+      "text_en": "Balanced futures positioning (funding 0.007%)"
     }
   ],
   "history": [
@@ -309,6 +309,15 @@
       "rot": 0.143,
       "wr": 0.351,
       "lev": -0.189
+    },
+    {
+      "t": "2026-09-13T18:14:26.202603+00:00",
+      "v": 2,
+      "qfi": 61,
+      "raw": 22,
+      "rot": 0.409,
+      "wr": 0.281,
+      "lev": -0.143
     }
   ],
   "data_quality": {
