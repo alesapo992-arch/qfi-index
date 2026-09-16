@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-09-15T18:15:40.393613+00:00",
+  "timestamp": "2026-09-16T06:16:01.272547+00:00",
   "scale": "0-100",
   "version": 2,
-  "qfi": 68,
-  "qfi_display": 68,
-  "qfi_raw": 35,
+  "qfi": 72,
+  "qfi_display": 72,
+  "qfi_raw": 44,
   "zone": "accumulation",
   "zone_label": "ACCUMULATION",
   "zone_label_it": "ACCUMULO",
@@ -20,27 +20,27 @@
     "emoji": "\u23f8\ufe0f",
     "action": "WAIT FOR CONFIRMATION",
     "strength": "weak",
-    "reason": "QFI 68/100 between 30 and 73",
-    "suggested_position": "88%"
+    "reason": "QFI 72/100 between 30 and 73",
+    "suggested_position": "97%"
   },
   "components": {
     "relative_strength": {
-      "value": 0.759,
+      "value": 0.774,
       "label": "Relative Strength Rotation",
       "weight": 0.35,
       "detail": "Performance 7g BTC/ETH vs cluster speculativi (media semplice)"
     },
     "smart_money_retail": {
-      "value": 0.31,
+      "value": 0.49,
       "label": "Smart Money vs Retail",
       "weight": 0.4,
-      "detail": "Top trader ratio: 2.44 (media 30g: 2.00), F&G: 69"
+      "detail": "Top trader ratio: 2.34 (media 30g: 2.04), F&G: 51"
     },
     "derivatives_pressure": {
-      "value": -0.171,
+      "value": -0.123,
       "label": "Derivatives Pressure",
       "weight": 0.25,
-      "detail": "Funding: 0.008%, OI change: 0.5%"
+      "detail": "Funding: 0.006%, OI change: 2.4%"
     }
   },
   "drivers": [
@@ -48,22 +48,22 @@
       "type": "Rotazione BTC/ETH",
       "direction": "bullish",
       "strength": "strong",
-      "text_it": "BTC/ETH outperformano i cluster speculativi (score: +0.76)",
-      "text_en": "BTC/ETH outperform speculative clusters (score: +0.76)"
+      "text_it": "BTC/ETH outperformano i cluster speculativi (score: +0.77)",
+      "text_en": "BTC/ETH outperform speculative clusters (score: +0.77)"
     },
     {
       "type": "Accumulo smart money",
       "direction": "bullish",
       "strength": "moderate",
-      "text_it": "Top trader long (+21.7% vs media 30g) + retail in fear (F&G 69)",
-      "text_en": "Top traders long (+21.7% vs 30d mean) + retail in fear (F&G 69)"
+      "text_it": "Top trader long (+15.0% vs media 30g) + retail in fear (F&G 51)",
+      "text_en": "Top traders long (+15.0% vs 30d mean) + retail in fear (F&G 51)"
     },
     {
       "type": "Leva bilanciata",
       "direction": "neutral",
       "strength": "weak",
-      "text_it": "Posizionamento futures equilibrato (funding 0.008%)",
-      "text_en": "Balanced futures positioning (funding 0.008%)"
+      "text_it": "Posizionamento futures equilibrato (funding 0.006%)",
+      "text_en": "Balanced futures positioning (funding 0.006%)"
     }
   ],
   "history": [
@@ -354,6 +354,15 @@
       "rot": 0.759,
       "wr": 0.31,
       "lev": -0.171
+    },
+    {
+      "t": "2026-09-16T06:16:01.272547+00:00",
+      "v": 2,
+      "qfi": 72,
+      "raw": 44,
+      "rot": 0.774,
+      "wr": 0.49,
+      "lev": -0.123
     }
   ],
   "data_quality": {
