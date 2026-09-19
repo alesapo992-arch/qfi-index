@@ -1,46 +1,53 @@
 {
-  "timestamp": "2026-09-19T06:18:03.407266+00:00",
+  "timestamp": "2026-09-19T14:10:28.520694+00:00",
   "scale": "0-100",
-  "version": 2,
-  "qfi": 28,
-  "qfi_display": 28,
-  "qfi_raw": -45,
-  "zone": "panic_selling",
-  "zone_label": "PANIC SELLING",
-  "zone_label_it": "VENDITA DI PANICO",
-  "zone_emoji": "\ud83d\udd34",
-  "zone_color": "#FF3B30",
-  "zone_range": "0-30",
-  "zone_meaning_en": "Extreme downside pressure.",
-  "zone_meaning_it": "Pressione ribassista estrema.",
-  "zone_legacy": "distribuzione",
+  "version": 3,
+  "qfi": 37,
+  "qfi_display": 37,
+  "qfi_raw": -27,
+  "zone": "distribution",
+  "zone_label": "RISK-ON CROWDING",
+  "zone_label_it": "AFFOLLAMENTO RISK-ON",
+  "zone_emoji": "\ud83d\udfe0",
+  "zone_color": "#FF9500",
+  "zone_range": "31-40",
+  "zone_meaning_en": "Speculative rotation is building; risk appetite above normal.",
+  "zone_meaning_it": "Rotazione speculativa in costruzione; appetito per il rischio sopra la norma.",
+  "zone_legacy": "pressione_negativa",
   "partial": false,
   "signal": {
-    "signal": "SELL",
-    "emoji": "\ud83d\udd34",
-    "action": "STRONG NEGATIVE ZONE",
-    "strength": "moderate",
-    "reason": "QFI 28/100 <= 30",
-    "suggested_position": "0-30%"
+    "signal": "HOLD",
+    "emoji": "\u23f8\ufe0f",
+    "action": "NEUTRAL ZONE - no positioning signal",
+    "stance": "WAIT",
+    "stance_it": "ATTENDERE",
+    "strength": "weak",
+    "reason": "QFI 37/100 (raw -26) between 30 and 73",
+    "suggested_position": "16%",
+    "suggested_position_note": "Rampa meccanica, non un consiglio: l'indice non ha potere predittivo dimostrato.",
+    "raw": -26,
+    "signal_mode": "contrarian",
+    "disclaimer": "Indicatore di posizionamento, non un segnale operativo. Nessun potere predittivo dimostrato: su 1.216 giorni la correlazione con il rendimento futuro del BTC e' -0,02 (7g) e -0,04 (30g).",
+    "disclaimer_en": "Positioning gauge, not a trading signal. No demonstrated predictive power: over 1,216 days the rank correlation with forward BTC returns is -0.02 (7d) and -0.04 (30d)."
   },
   "components": {
     "relative_strength": {
-      "value": -0.759,
+      "value": -0.868,
       "label": "Relative Strength Rotation",
       "weight": 0.35,
       "detail": "Performance 7g BTC/ETH vs cluster speculativi (media semplice)"
     },
     "smart_money_retail": {
-      "value": -0.368,
+      "value": 0.227,
       "label": "Smart Money vs Retail",
       "weight": 0.4,
-      "detail": "Top trader ratio: 2.01 (media 30g: 2.11), F&G: 71"
+      "detail": "Top trader ratio: 2.36 (media 30g: 2.09), F&G: 71"
     },
     "derivatives_pressure": {
-      "value": -0.15,
+      "value": -0.218,
       "label": "Derivatives Pressure",
       "weight": 0.25,
-      "detail": "Funding: 0.007%, OI change: 4.7%"
+      "detail": "Funding: 0.010%, OI change: 4.6%"
     }
   },
   "drivers": [
@@ -48,28 +55,28 @@
       "type": "Rotazione speculativa",
       "direction": "bearish",
       "strength": "strong",
-      "text_it": "I cluster speculativi outperformano BTC/ETH (score: -0.76)",
-      "text_en": "Speculative clusters outperform BTC/ETH (score: -0.76)"
+      "text_it": "I cluster speculativi outperformano BTC/ETH (score: -0.87)",
+      "text_en": "Speculative clusters outperform BTC/ETH (score: -0.87)"
     },
     {
-      "type": "Distribuzione smart money",
-      "direction": "bearish",
-      "strength": "moderate",
-      "text_it": "Top trader scarichi (-4.7% vs media 30g) + retail in greed (F&G 71)",
-      "text_en": "Top traders light (-4.7% vs 30d mean) + retail in greed (F&G 71)"
+      "type": "Posizionamento allineato",
+      "direction": "neutral",
+      "strength": "weak",
+      "text_it": "Top trader e retail allineati (ratio 2.36, F&G 71)",
+      "text_en": "Top traders and retail aligned (ratio 2.36, F&G 71)"
     },
     {
       "type": "Leva bilanciata",
       "direction": "neutral",
       "strength": "weak",
-      "text_it": "Posizionamento futures equilibrato (funding 0.007%)",
-      "text_en": "Balanced futures positioning (funding 0.007%)"
+      "text_it": "Posizionamento futures equilibrato (funding 0.010%)",
+      "text_en": "Balanced futures positioning (funding 0.010%)"
     }
   ],
   "history": [
     {
       "t": "2026-08-31T13:52:35.370178+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 66,
       "raw": 31,
       "rot": 0.608,
@@ -78,7 +85,7 @@
     },
     {
       "t": "2026-09-01T01:52:49.834253+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 62,
       "raw": 24,
       "rot": 0.451,
@@ -87,7 +94,7 @@
     },
     {
       "t": "2026-09-01T13:53:04.358685+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 61,
       "raw": 22,
       "rot": 0.33,
@@ -96,7 +103,7 @@
     },
     {
       "t": "2026-09-02T01:53:18.175738+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 58,
       "raw": 16,
       "rot": 0.134,
@@ -105,7 +112,7 @@
     },
     {
       "t": "2026-09-02T13:53:33.489709+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 58,
       "raw": 16,
       "rot": 0.176,
@@ -114,7 +121,7 @@
     },
     {
       "t": "2026-09-03T01:53:46.590210+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 57,
       "raw": 13,
       "rot": 0.197,
@@ -123,7 +130,7 @@
     },
     {
       "t": "2026-09-03T08:56:44.237476+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 52,
       "raw": 4,
       "rot": 0.081,
@@ -132,7 +139,7 @@
     },
     {
       "t": "2026-09-04T04:54:29.289572+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 51,
       "raw": 1,
       "rot": 0.106,
@@ -141,7 +148,7 @@
     },
     {
       "t": "2026-09-04T16:54:49.692936+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 57,
       "raw": 14,
       "rot": 0.163,
@@ -150,7 +157,7 @@
     },
     {
       "t": "2026-09-05T04:55:09.802243+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 52,
       "raw": 4,
       "rot": -0.201,
@@ -159,7 +166,7 @@
     },
     {
       "t": "2026-09-05T16:55:28.387464+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 50,
       "raw": -1,
       "rot": -0.31,
@@ -168,7 +175,7 @@
     },
     {
       "t": "2026-09-06T04:55:46.731817+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 45,
       "raw": -11,
       "rot": -0.507,
@@ -177,7 +184,7 @@
     },
     {
       "t": "2026-09-06T10:02:19.514540+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 42,
       "raw": -16,
       "rot": -0.574,
@@ -186,7 +193,7 @@
     },
     {
       "t": "2026-09-07T04:34:00.060728+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 34,
       "raw": -32,
       "rot": -1.0,
@@ -195,7 +202,7 @@
     },
     {
       "t": "2026-09-07T16:34:22.060671+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 33,
       "raw": -35,
       "rot": -1.0,
@@ -204,7 +211,7 @@
     },
     {
       "t": "2026-09-08T04:34:40.452031+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 34,
       "raw": -32,
       "rot": -0.957,
@@ -213,7 +220,7 @@
     },
     {
       "t": "2026-09-08T16:35:09.555723+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 37,
       "raw": -27,
       "rot": -1.0,
@@ -222,7 +229,7 @@
     },
     {
       "t": "2026-09-09T04:40:14.230211+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 37,
       "raw": -27,
       "rot": -0.9,
@@ -231,7 +238,7 @@
     },
     {
       "t": "2026-09-09T06:11:29.722536+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 39,
       "raw": -22,
       "rot": -0.9,
@@ -240,7 +247,7 @@
     },
     {
       "t": "2026-09-09T18:11:48.472677+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 36,
       "raw": -28,
       "rot": -1.0,
@@ -249,7 +256,7 @@
     },
     {
       "t": "2026-09-10T06:12:10.996095+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 43,
       "raw": -14,
       "rot": -0.593,
@@ -258,7 +265,7 @@
     },
     {
       "t": "2026-09-10T18:12:28.921818+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 46,
       "raw": -8,
       "rot": -0.308,
@@ -267,7 +274,7 @@
     },
     {
       "t": "2026-09-11T06:12:48.800071+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 46,
       "raw": -8,
       "rot": -0.47,
@@ -276,7 +283,7 @@
     },
     {
       "t": "2026-09-11T18:13:06.365898+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 50,
       "raw": 0,
       "rot": -0.292,
@@ -285,7 +292,7 @@
     },
     {
       "t": "2026-09-12T06:13:30.222494+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 55,
       "raw": 10,
       "rot": -0.033,
@@ -294,7 +301,7 @@
     },
     {
       "t": "2026-09-12T18:13:49.068966+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 57,
       "raw": 14,
       "rot": 0.087,
@@ -303,7 +310,7 @@
     },
     {
       "t": "2026-09-13T06:14:05.714583+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 57,
       "raw": 14,
       "rot": 0.143,
@@ -312,7 +319,7 @@
     },
     {
       "t": "2026-09-13T18:14:26.202603+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 61,
       "raw": 22,
       "rot": 0.409,
@@ -321,7 +328,7 @@
     },
     {
       "t": "2026-09-14T06:14:42.167934+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 64,
       "raw": 28,
       "rot": 0.499,
@@ -330,7 +337,7 @@
     },
     {
       "t": "2026-09-14T18:15:02.361597+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 58,
       "raw": 16,
       "rot": 0.61,
@@ -339,7 +346,7 @@
     },
     {
       "t": "2026-09-15T06:15:21.268775+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 61,
       "raw": 22,
       "rot": 0.6,
@@ -348,7 +355,7 @@
     },
     {
       "t": "2026-09-15T18:15:40.393613+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 68,
       "raw": 35,
       "rot": 0.759,
@@ -357,7 +364,7 @@
     },
     {
       "t": "2026-09-16T06:16:01.272547+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 72,
       "raw": 44,
       "rot": 0.774,
@@ -366,7 +373,7 @@
     },
     {
       "t": "2026-09-16T18:16:22.911307+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 70,
       "raw": 40,
       "rot": 0.732,
@@ -375,7 +382,7 @@
     },
     {
       "t": "2026-09-17T06:16:41.442033+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 62,
       "raw": 23,
       "rot": 0.307,
@@ -384,7 +391,7 @@
     },
     {
       "t": "2026-09-17T18:17:01.249617+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 52,
       "raw": 3,
       "rot": -0.254,
@@ -393,7 +400,7 @@
     },
     {
       "t": "2026-09-18T06:17:24.047290+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 46,
       "raw": -9,
       "rot": -0.583,
@@ -402,7 +409,7 @@
     },
     {
       "t": "2026-09-18T18:17:44.741841+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 31,
       "raw": -38,
       "rot": -0.69,
@@ -411,12 +418,21 @@
     },
     {
       "t": "2026-09-19T06:18:03.407266+00:00",
-      "v": 2,
+      "v": 3,
       "qfi": 28,
       "raw": -45,
       "rot": -0.759,
       "wr": -0.368,
       "lev": -0.15
+    },
+    {
+      "t": "2026-09-19T14:10:28.520694+00:00",
+      "v": 3,
+      "qfi": 37,
+      "raw": -27,
+      "rot": -0.868,
+      "wr": 0.227,
+      "lev": -0.218
     }
   ],
   "data_quality": {
