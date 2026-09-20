@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quantum Flow Index — Crypto Market Regime | 0-100</title>
-<meta name="description" content="The QFI measures crypto market regime from 0 to 100: from PANIC SELLING to SMART BUYING. Updated daily from public data.">
+<title>Quantum Flow Index — Crypto Positioning Gauge (0-100)</title>
+<meta name="description" content="The QFI reads where crypto positioning is crowded, from 0 to 100: SPECULATIVE EUPHORIA (crowded risk-on) to SMART BUYING (capitulation). One value per day, built from public data, fully reproducible.">
 
 <link rel="canonical" href="https://alesapo992-arch.github.io/qfi-index/">
 <meta name="robots" content="index, follow">
@@ -13,8 +13,8 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://alesapo992-arch.github.io/qfi-index/">
-<meta property="og:title" content="Quantum Flow Index — Crypto Market Regime">
-<meta property="og:description" content="One number. Five zones. The crypto market regime at a glance.">
+<meta property="og:title" content="Quantum Flow Index — Crypto Positioning Gauge">
+<meta property="og:description" content="One number. Five zones. Where crypto positioning is crowded right now.">
 <meta property="og:image" content="https://alesapo992-arch.github.io/qfi-index/data/qfi_gauge.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="780">
@@ -22,8 +22,8 @@
 <!-- Twitter / X Card (CRITICO per la viralità) -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@alesapo2">
-<meta name="twitter:title" content="Quantum Flow Index — Crypto Market Regime">
-<meta name="twitter:description" content="Today's QFI: updated daily. From PANIC SELLING (0) to SMART BUYING (100).">
+<meta name="twitter:title" content="Quantum Flow Index — Crypto Positioning Gauge">
+<meta name="twitter:description" content="Today's QFI, one value per day. From SPECULATIVE EUPHORIA (0) to SMART BUYING (100).">
 <meta name="twitter:image" content="https://alesapo992-arch.github.io/qfi-index/data/qfi_gauge.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -65,6 +65,7 @@ body{
 ::selection{background:var(--smart);color:#04140a}
 .container{max-width:1180px;margin:0 auto;padding:0 24px}
 h1,h2,h3,h4{font-family:var(--display);letter-spacing:-.01em}
+code{background:var(--surface-3);padding:2px 6px;border-radius:4px;font-family:var(--mono);font-size:.85em}
 
 /* NAV */
 nav{
@@ -121,6 +122,17 @@ nav .container{display:flex;justify-content:space-between;align-items:center;hei
 .hero-stats .hs .v{font-size:1.4rem;font-weight:700;color:var(--text)}
 .hero-stats .hs .l{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-top:2px}
 
+/* READING STRIP — la lettura del segnale */
+.reading{
+  margin-top:34px;background:var(--surface-2);border:1px solid var(--line);
+  border-left:3px solid var(--faint);border-radius:var(--radius);
+  padding:16px 20px;font-family:var(--mono);font-size:.84rem;color:var(--muted);
+  line-height:1.7;
+}
+.reading .r-head{color:var(--text);font-weight:700;letter-spacing:.06em;font-size:.8rem;text-transform:uppercase}
+.reading .r-reason{color:var(--faint);font-size:.78rem;margin-top:6px}
+.reading .r-note{color:var(--faint);font-size:.74rem;margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}
+
 .hero-gauge{
   background:var(--surface-2);border:1px solid var(--line);
   border-radius:var(--radius);padding:20px;position:relative;overflow:hidden;
@@ -146,6 +158,7 @@ section{padding:70px 0}
   background:var(--surface-2);padding:24px;border-radius:var(--radius);
   border:1px solid var(--line);height:420px;position:relative;
 }
+.chart-note{text-align:center;color:var(--faint);font-size:.82rem;margin-top:16px;font-family:var(--mono)}
 
 /* ZONES */
 .zones-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
@@ -154,6 +167,7 @@ section{padding:70px 0}
   border:1px solid var(--line);border-top:3px solid;transition:transform .25s;
 }
 .zone-card:hover{transform:translateY(-3px)}
+.zone-card.is-current{background:var(--surface-3);box-shadow:0 0 0 1px var(--line-strong)}
 .zone-card .z-emoji{font-size:1.8rem;margin-bottom:10px}
 .zone-card .z-range{
   font-family:var(--mono);font-size:.72rem;color:var(--faint);
@@ -161,6 +175,10 @@ section{padding:70px 0}
 }
 .zone-card .z-name{font-family:var(--display);font-size:1rem;font-weight:700;margin-bottom:10px}
 .zone-card .z-desc{color:var(--muted);font-size:.88rem;line-height:1.55}
+.zone-card .z-action{
+  margin-top:12px;padding-top:12px;border-top:1px solid var(--line);
+  font-family:var(--mono);font-size:.74rem;color:var(--faint);line-height:1.5;
+}
 
 /* COMPONENTS */
 .comp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
@@ -179,6 +197,10 @@ section{padding:70px 0}
 }
 .comp-card h3{color:#fff;font-size:1.1rem;margin-bottom:10px}
 .comp-card p{color:var(--muted);font-size:.9rem;line-height:1.6}
+.comp-card .c-value{
+  margin-top:14px;padding-top:12px;border-top:1px solid var(--line);
+  font-family:var(--mono);font-size:.78rem;color:var(--faint);
+}
 
 /* FAQ */
 .faq-item{
@@ -195,7 +217,8 @@ section{padding:70px 0}
   max-height:0;overflow:hidden;transition:max-height .35s ease, padding .35s ease;
   padding:0 24px;color:var(--muted);font-size:.94rem;line-height:1.8;
 }
-.faq-item.active .faq-answer{padding:0 24px 22px;max-height:600px}
+.faq-item.active .faq-answer{padding:0 24px 22px;max-height:900px}
+.faq-answer p + p{margin-top:12px}
 .faq-toggle{
   flex-shrink:0;width:28px;height:28px;border-radius:8px;
   display:flex;align-items:center;justify-content:center;
@@ -230,6 +253,7 @@ footer .tagline{color:var(--muted);margin-bottom:24px;font-size:.95rem}
   .hero{padding:50px 0 30px}
   .chart-container{height:320px;padding:14px}
   .hero-stats .hs{padding:0 14px}
+  .reading{font-size:.78rem}
 }
 </style>
 </head>
@@ -252,13 +276,20 @@ footer .tagline{color:var(--muted);margin-bottom:24px;font-size:.95rem}
 <div class="container">
 <div class="hero-grid">
 <div class="hero-text">
-<div class="badge" id="hero-badge">LIVE · UPDATED DAILY</div>
-<h1>One number.<br><span class="grad">The whole crypto regime.</span></h1>
-<p>The QFI compresses rotation, smart-money positioning and derivatives pressure into a single 0-100 score. Updated daily from public data.</p>
+<div class="badge" id="hero-badge">LIVE · ONE VALUE PER DAY</div>
+<h1>One number.<br><span class="grad">The whole market regime.</span></h1>
+<p>The QFI compresses rotation, smart-money positioning and derivatives pressure into a single 0–100 score. It reads <strong>where positioning is crowded right now</strong> — it does not predict where price goes next.</p>
 <div class="hero-stats">
 <div class="hs"><div class="v" id="stat-value">--</div><div class="l">Current</div></div>
 <div class="hs"><div class="v" id="stat-zone">--</div><div class="l">Zone</div></div>
-<div class="hs"><div class="v" id="stat-delta">--</div><div class="l">24h Δ</div></div>
+<div class="hs"><div class="v" id="stat-delta">--</div><div class="l" id="stat-delta-label">24h Δ</div></div>
+</div>
+
+<!-- Lettura del segnale: arriva dal JSON, non da una tabella locale -->
+<div class="reading" id="reading" style="display:none">
+<div class="r-head" id="r-head">--</div>
+<div class="r-reason" id="r-reason">--</div>
+<div class="r-note" id="r-note">Not financial advice. The QFI reads positioning; it is not a trade signal.</div>
 </div>
 </div>
 <div class="hero-gauge">
@@ -269,7 +300,7 @@ footer .tagline{color:var(--muted);margin-bottom:24px;font-size:.95rem}
 </div>
 <div class="hero-gauge-meta">
 <span id="gauge-ts">--</span>
-<span>Scale: 0-100</span>
+<span id="gauge-raw">Scale: 0–100</span>
 </div>
 </div>
 </div>
@@ -281,11 +312,12 @@ footer .tagline{color:var(--muted);margin-bottom:24px;font-size:.95rem}
 <div class="container">
 <div class="section-head">
 <h2>📈 90-Day History</h2>
-<p class="subtitle">The QFI over time, with zone bands highlighted. One point per update cycle.</p>
+<p class="subtitle">The QFI over time, with zone bands highlighted. One point per day — the value is frozen at the first run of each UTC day and served unchanged until the next one.</p>
 </div>
 <div class="chart-container">
 <canvas id="qfiChart"></canvas>
 </div>
+<p class="chart-note" id="chart-note">Loading history…</p>
 </div>
 </section>
 
@@ -294,39 +326,50 @@ footer .tagline{color:var(--muted);margin-bottom:24px;font-size:.95rem}
 <div class="container">
 <div class="section-head">
 <h2>🎯 The Five Zones</h2>
-<p class="subtitle">Each QFI value falls into one of five regimes. They tell you <em>what the market looks like right now</em> — not where it will go.</p>
+<p class="subtitle">Each QFI value falls into one of five regimes. They describe <em>what positioning looks like right now</em> — not where the market will go. The action in each zone is deliberately contrarian.</p>
 </div>
 <div class="zones-grid">
-<div class="zone-card" style="border-top-color:var(--panic)">
+
+<div class="zone-card" data-zone="panic_selling" style="border-top-color:var(--panic)">
 <div class="z-emoji">🔴</div>
 <div class="z-range">0 — 30</div>
-<div class="z-name" style="color:var(--panic)">PANIC SELLING</div>
-<div class="z-desc">Extreme downside pressure. Retail fear, smart money often quietly accumulating.</div>
+<div class="z-name" style="color:var(--panic)">SPECULATIVE EUPHORIA</div>
+<div class="z-desc">Retail greed at an extreme and altcoins outperforming BTC/ETH: crowded risk appetite.</div>
+<div class="z-action">Contrarian: reduce exposure.</div>
 </div>
-<div class="zone-card" style="border-top-color:var(--distribution)">
+
+<div class="zone-card" data-zone="distribution" style="border-top-color:var(--distribution)">
 <div class="z-emoji">🟠</div>
 <div class="z-range">31 — 40</div>
-<div class="z-name" style="color:var(--distribution)">DISTRIBUTION</div>
-<div class="z-desc">Sellers in control. Positioning is unwinding across derivatives and spot.</div>
+<div class="z-name" style="color:var(--distribution)">RISK-ON CROWDING</div>
+<div class="z-desc">Speculative rotation is building; risk appetite above normal.</div>
+<div class="z-action">Contrarian: trim on strength.</div>
 </div>
-<div class="zone-card" style="border-top-color:var(--neutral)">
+
+<div class="zone-card" data-zone="neutral" style="border-top-color:var(--neutral)">
 <div class="z-emoji">⚪</div>
 <div class="z-range">41 — 59</div>
 <div class="z-name" style="color:var(--neutral)">NEUTRAL</div>
-<div class="z-desc">Balanced conditions. No dominant pressure. The market isn't saying much.</div>
+<div class="z-desc">Positioning is balanced: no crowding in either direction.</div>
+<div class="z-action">No action.</div>
 </div>
-<div class="zone-card" style="border-top-color:var(--accumulation)">
+
+<div class="zone-card" data-zone="accumulation" style="border-top-color:var(--accumulation)">
 <div class="z-emoji">🟡</div>
 <div class="z-range">60 — 72</div>
 <div class="z-name" style="color:var(--accumulation)">ACCUMULATION</div>
-<div class="z-desc">Buyers building positions. Constructive conditions, not yet extreme.</div>
+<div class="z-desc">Fear is rising, altcoins are being sold and capital is rotating back to BTC/ETH.</div>
+<div class="z-action">Contrarian: start accumulating.</div>
 </div>
-<div class="zone-card" style="border-top-color:var(--smart)">
+
+<div class="zone-card" data-zone="smart_buying" style="border-top-color:var(--smart)">
 <div class="z-emoji">🟢</div>
 <div class="z-range">73 — 100</div>
 <div class="z-name" style="color:var(--smart)">SMART BUYING</div>
-<div class="z-desc">Strong smart-money demand. BTC/ETH lead, derivatives aligned.</div>
+<div class="z-desc">Extreme fear with altcoins heavily sold: smart money has room to accumulate.</div>
+<div class="z-action">Contrarian: accumulate.</div>
 </div>
+
 </div>
 </div>
 </section>
@@ -336,27 +379,30 @@ footer .tagline{color:var(--muted);margin-bottom:24px;font-size:.95rem}
 <div class="container">
 <div class="section-head">
 <h2>⚙️ How It's Computed</h2>
-<p class="subtitle">The QFI is a weighted average of three independent components, each normalized to [-1, +1] and rescaled to 0-100. All data comes from public, free APIs.</p>
+<p class="subtitle">The QFI is a weighted average of three independent components, each normalized to [−1, +1] and rescaled to 0–100. All data comes from public, free APIs.</p>
 </div>
 <div class="comp-grid">
 <div class="comp-card">
 <span class="c-weight">WEIGHT 35%</span>
 <h3>🔄 Relative Strength Rotation</h3>
-<p>7-day performance of BTC & ETH versus a cluster of speculative altcoins (L1s, memes, AI tokens). Money rotating into BTC = cautious market. Money rotating into memes = late cycle.</p>
+<p>7-day performance of BTC &amp; ETH versus a cluster of speculative altcoins (L1s, memes, AI tokens). Money rotating into BTC/ETH = tighter risk appetite. Money rotating into memes = late-cycle speculation.</p>
+<div class="c-value" id="comp-rot">current: --</div>
 </div>
 <div class="comp-card">
 <span class="c-weight">WEIGHT 40%</span>
 <h3>🐋 Smart Money vs Retail</h3>
-<p>Binance top-trader long/short ratio (by account size) vs the 30-day mean, crossed with the Fear & Greed Index. Big players buying while retail panics = often constructive.</p>
+<p>Binance top-trader long/short ratio (<strong>position-weighted</strong>) versus its <strong>30-day median</strong>, crossed with the Fear &amp; Greed Index. Big players positioned against retail crowding.</p>
+<div class="c-value" id="comp-smart">current: --</div>
 </div>
 <div class="comp-card">
 <span class="c-weight">WEIGHT 25%</span>
 <h3>⚖️ Derivatives Pressure</h3>
 <p>Funding rate combined with 7-day Open Interest change. Crowded leveraged longs with rising OI = cascade risk. Crowded shorts = squeeze potential.</p>
+<div class="c-value" id="comp-lev">current: --</div>
 </div>
 </div>
 <div style="margin-top:36px;padding:22px 26px;background:var(--surface-2);border-radius:var(--radius);border-left:3px solid #22d3ee;color:var(--muted);font-size:.92rem;line-height:1.7">
-<strong style="color:#22d3ee">🔁 Reproducible:</strong> Every data point on the chart above can be recomputed with the same public APIs (CoinGecko, Binance Futures, alternative.me). Component weights are chosen by design, not fit to historical data. <a href="https://github.com/alesapo992-arch/cryptoale-signals" style="color:#22d3ee">View source →</a>
+<strong style="color:#22d3ee">🔁 Reproducible:</strong> every value on this page can be recomputed from the same public APIs (CoinGecko, Binance Futures, alternative.me) — the raw inputs are published alongside each daily reading. Component weights are chosen by design, not fitted to historical data. <a href="https://github.com/alesapo992-arch/qfi-index" style="color:#22d3ee">View source →</a>
 </div>
 </div>
 </section>
@@ -367,74 +413,121 @@ footer .tagline{color:var(--muted);margin-bottom:24px;font-size:.95rem}
 <div class="section-head">
 <h2>Frequently Asked Questions</h2>
 </div>
+
 <div class="faq-item">
-<button class="faq-question"><span>Is the QFI a buy/sell signal?</span><span class="faq-toggle">+</span></button>
-<div class="faq-answer"><p>No. It's a regime indicator — a thermometer, not a crystal ball. It tells you what the market <em>looks like</em> right now. The same trade setup is statistically more reliable in SMART BUYING than in PANIC SELLING, but the QFI alone should never drive a trade decision.</p></div>
+<button class="faq-question" aria-expanded="false"><span>Is the QFI a buy/sell signal?</span><span class="faq-toggle">+</span></button>
+<div class="faq-answer">
+<p>No. It's a positioning gauge, not a signal. It tells you where the market is <em>crowded</em> right now.</p>
+<p>Tested over 1,216 days against forward BTC returns, it shows no measurable edge: rank correlation −0.02 at 7 days and −0.04 at 30 days, essentially the same as the official Fear &amp; Greed Index. The "action" line in each zone is deliberately contrarian — it describes what a contrarian reading of that regime would be, not a recommendation. Never size a position on the QFI alone.</p>
 </div>
+</div>
+
 <div class="faq-item">
-<button class="faq-question"><span>How often is it updated?</span><span class="faq-toggle">+</span></button>
-<div class="faq-answer"><p>Once per day, at the same UTC hour. This makes it a daily ritual — like checking the Fear & Greed Index — rather than a noisy intraday signal.</p></div>
+<button class="faq-question" aria-expanded="false"><span>How often is it updated?</span><span class="faq-toggle">+</span></button>
+<div class="faq-answer">
+<p>Once per day. The value is locked at the first run of each UTC day and served unchanged until the next one, so the number doesn't move under you — everyone reading this page sees the same figure.</p>
+<p>That's deliberate: a daily reading is a ritual (like checking the Fear &amp; Greed Index), while an intraday one is just noise.</p>
 </div>
+</div>
+
 <div class="faq-item">
-<button class="faq-question"><span>Why 0-100 and not -100/+100?</span><span class="faq-toggle">+</span></button>
-<div class="faq-answer"><p>A 0-100 scale is universally intuitive and comparable to the Fear & Greed Index. Internally, the raw score still ranges -100/+100, but the public score is rescaled.</p></div>
+<button class="faq-question" aria-expanded="false"><span>Why 0–100 and not −100/+100?</span><span class="faq-toggle">+</span></button>
+<div class="faq-answer">
+<p>A 0–100 scale is universally intuitive and directly comparable to the Fear &amp; Greed Index. Internally the raw score still ranges −100/+100, and the public value is <code>(raw + 100) / 2</code>.</p>
+<p>Both are published: the data file exposes <code>qfi</code> (0–100) and <code>qfi_raw</code> (−100/+100). The mapping halves the resolution — 201 raw levels become 101 published ones — which is exactly why the raw value is shown next to the score.</p>
 </div>
+</div>
+
 <div class="faq-item">
-<button class="faq-question"><span>Does it use paid APIs?</span><span class="faq-toggle">+</span></button>
-<div class="faq-answer"><p>No. All data comes from free public endpoints: CoinGecko for prices, Binance Futures for top-trader ratios, funding and OI, and alternative.me for Fear & Greed.</p></div>
+<button class="faq-question" aria-expanded="false"><span>Has the index been tested?</span><span class="faq-toggle">+</span></button>
+<div class="faq-answer">
+<p>Yes, and the result is published here rather than buried: over 1,216 days the QFI's rank correlation with forward BTC returns is −0.02 at 7 days and −0.04 at 30 days — indistinguishable from zero. A simple rule trading the zones performs worse than buy-and-hold.</p>
+<p>The component weights are chosen by design, not fitted to the data. That means there is no overfitting to hide — and also no demonstrated edge. The value of the index is in reading positioning, not in timing the market.</p>
 </div>
+</div>
+
 <div class="faq-item">
-<button class="faq-question"><span>Can I embed the gauge on my site?</span><span class="faq-toggle">+</span></button>
-<div class="faq-answer"><p>Yes — the gauge PNG is always available at <code style="background:var(--surface-3);padding:2px 6px;border-radius:4px;font-family:var(--mono);font-size:.85em">/data/qfi_gauge.png</code>. Hotlinking is allowed with attribution.</p></div>
+<button class="faq-question" aria-expanded="false"><span>Does it use paid APIs?</span><span class="faq-toggle">+</span></button>
+<div class="faq-answer">
+<p>No. All data comes from free public endpoints: CoinGecko for prices, Binance Futures for the top-trader ratio, funding and open interest, and alternative.me for Fear &amp; Greed.</p>
 </div>
+</div>
+
 <div class="faq-item">
-<button class="faq-question"><span>Is this financial advice?</span><span class="faq-toggle">+</span></button>
-<div class="faq-answer"><p>No. The QFI is educational content. Trading involves risk of loss. Past performance doesn't guarantee future results. Only invest what you can afford to lose.</p></div>
+<button class="faq-question" aria-expanded="false"><span>Can I embed the gauge on my site?</span><span class="faq-toggle">+</span></button>
+<div class="faq-answer">
+<p>Yes — the gauge PNG is always available at <code>/data/qfi_gauge.png</code>, and the raw data at <code>/data/qfi.json</code>. Hotlinking is allowed with attribution.</p>
 </div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question" aria-expanded="false"><span>Is this financial advice?</span><span class="faq-toggle">+</span></button>
+<div class="faq-answer">
+<p>No. The QFI is educational content. Trading involves risk of loss. Past performance doesn't guarantee future results. Only invest what you can afford to lose.</p>
+</div>
+</div>
+
 </div>
 </section>
 
 <footer>
 <div class="container">
 <a class="logo" href="#"><span class="dot"></span>Quantum<span class="accent">Flow</span>Index</a>
-<p class="tagline">One number. The whole crypto regime. Updated daily.</p>
+<p class="tagline">One number. Where positioning is crowded. One value per day.</p>
 <div class="footer-links">
 <a href="https://x.com/alesapo2">X / Twitter</a>
-<a href="https://github.com/alesapo992-arch/cryptoale-signals">Source Code</a>
+<a href="https://github.com/alesapo992-arch/qfi-index">Source Code</a>
 <a href="https://t.me/CryptoAleCommunity">Telegram</a>
 </div>
-<p class="disclaimer">⚠️ The Quantum Flow Index is not financial advice. It is an educational, rule-based indicator built from public data. Trading involves risk. Past readings do not predict future price action.</p>
-<p class="copyright">© 2026 CryptoAle · QFI v2.0</p>
+<p class="disclaimer">⚠️ The Quantum Flow Index is not financial advice. It is an educational, rule-based indicator built entirely from public data. It measures positioning, not price: tested over 1,216 days it shows no measurable predictive edge over the official Fear &amp; Greed Index. Trading involves risk. Past readings do not predict future price action.</p>
+<p class="copyright">© 2026 CryptoAle · QFI v3.0</p>
 </div>
 </footer>
 
 <script>
 // ==========================================
 // 📊 ZONE DEFINITIONS
+// Le chiavi sono le STESSE che pubblica il pipeline (qfi_scale.py):
+// cosi' la pagina puo' farsi guidare dal JSON invece di indovinare.
+// Questa tabella e' solo il fallback per quando il JSON non risponde.
 // ==========================================
 const ZONES = [
-  { min: 0,  max: 30,  key: 'panic',        name: 'PANIC SELLING',  color: '#FF3B30', emoji: '🔴' },
-  { min: 31, max: 40,  key: 'distribution', name: 'DISTRIBUTION',   color: '#FF9500', emoji: '🟠' },
-  { min: 41, max: 59,  key: 'neutral',      name: 'NEUTRAL',        color: '#9CA3AF', emoji: '⚪' },
-  { min: 60, max: 72,  key: 'accumulation', name: 'ACCUMULATION',   color: '#FACC15', emoji: '🟡' },
-  { min: 73, max: 100, key: 'smart',        name: 'SMART BUYING',   color: '#22C55E', emoji: '🟢' },
+  { min: 0,  max: 30,  key: 'panic_selling', name: 'SPECULATIVE EUPHORIA', color: '#FF3B30', emoji: '🔴', action: 'Contrarian: reduce exposure.' },
+  { min: 31, max: 40,  key: 'distribution',  name: 'RISK-ON CROWDING',     color: '#FF9500', emoji: '🟠', action: 'Contrarian: trim on strength.' },
+  { min: 41, max: 59,  key: 'neutral',       name: 'NEUTRAL',              color: '#9CA3AF', emoji: '⚪', action: 'No action.' },
+  { min: 60, max: 72,  key: 'accumulation',  name: 'ACCUMULATION',         color: '#FACC15', emoji: '🟡', action: 'Contrarian: start accumulating.' },
+  { min: 73, max: 100, key: 'smart_buying',  name: 'SMART BUYING',         color: '#22C55E', emoji: '🟢', action: 'Contrarian: accumulate.' },
 ];
 
 function zoneFor(qfi) {
   return ZONES.find(z => qfi >= z.min && qfi <= z.max) || ZONES[2];
 }
 
+// La zona "ufficiale" viene dal JSON quando c'e': etichetta, emoji e colore
+// arrivano dal pipeline, quindi pagina e dati non possono divergere.
+function zoneFromData(data) {
+  const qfi = data.qfi;
+  const local = zoneFor(qfi);
+  return {
+    key:   data.zone || data.zone_key || local.key,
+    name:  data.zone_label || local.name,
+    emoji: data.zone_emoji || local.emoji,
+    color: data.zone_color || local.color,
+    action: data.zone_action_en || local.action,
+    desc:  data.zone_meaning_en || null,
+  };
+}
+
 // ==========================================
-// 📈 CHART SETUP
+// 📈 CHART
 // ==========================================
 const ctx = document.getElementById('qfiChart').getContext('2d');
 
-// Zone background bands plugin
 const zoneBandsPlugin = {
   id: 'zoneBands',
   beforeDraw(chart) {
     const { ctx, chartArea: { left, right, top, bottom }, scales: { y } } = chart;
-    if (!y) return;
+    if (!y || !left) return;
     ZONES.forEach(z => {
       const yTop = y.getPixelForValue(z.max + 1);
       const yBot = y.getPixelForValue(z.min);
@@ -489,12 +582,8 @@ const qfiChart = new Chart(ctx, {
       },
       y: {
         min: 0, max: 100,
-        ticks: {
-          color: '#64748b',
-          stepSize: 20,
-          font: { family: "'JetBrains Mono', monospace", size: 10 }
-        },
-        grid: { color: ctx2 => ctx2.tick.value === 50 ? 'rgba(148,163,184,.25)' : 'rgba(148,163,184,.07)' }
+        ticks: { color: '#64748b', stepSize: 20, font: { family: "'JetBrains Mono', monospace", size: 10 } },
+        grid: { color: c => c.tick.value === 50 ? 'rgba(148,163,184,.25)' : 'rgba(148,163,184,.07)' }
       }
     }
   },
@@ -502,51 +591,125 @@ const qfiChart = new Chart(ctx, {
 });
 
 // ==========================================
+// 🔢 24h Δ — usa il campo del JSON se c'e',
+// altrimenti lo ricava dallo storico (un punto ~24h prima).
+// ==========================================
+function delta24h(data) {
+  if (typeof data.qfi_prev_24h === 'number') return { d: data.qfi - data.qfi_prev_24h, label: '24h Δ' };
+  const h = (data.history || []).filter(x => typeof x.qfi === 'number');
+  if (h.length < 2) return null;
+  const last = h[h.length - 1];
+  const lastTs = new Date(last.t || last.timestamp).getTime();
+  let best = null, bestDiff = Infinity;
+  for (let i = 0; i < h.length - 1; i++) {
+    const ts = new Date(h[i].t || h[i].timestamp).getTime();
+    const diff = Math.abs((lastTs - ts) - 86400000);
+    if (diff < bestDiff) { bestDiff = diff; best = h[i]; }
+  }
+  if (!best) return null;
+  // se il punto piu' vicino non e' a ~24h, dichiariamo l'intervallo reale
+  return { d: last.qfi - best.qfi, label: bestDiff <= 21600000 ? '24h Δ' : 'Δ vs prev' };
+}
+
+// ==========================================
 // 🔄 RENDER
 // ==========================================
 function render(data) {
   if (!data || typeof data.qfi !== 'number') return;
 
-  const qfi = data.qfi;
-  const zone = zoneFor(qfi);
-  const prev = data.qfi_prev_24h;
+  const qfi  = data.qfi;
+  const zone = zoneFromData(data);
 
   // Hero stats
-  document.getElementById('stat-value').textContent = qfi;
-  document.getElementById('stat-value').style.color = zone.color;
-  document.getElementById('stat-zone').textContent = zone.emoji + ' ' + zone.name;
-  document.getElementById('stat-zone').style.color = zone.color;
-  document.getElementById('stat-zone').style.fontSize = '1rem';
+  const elValue = document.getElementById('stat-value');
+  elValue.textContent = qfi;
+  elValue.style.color = zone.color;
 
-  if (prev !== null && prev !== undefined) {
-    const delta = qfi - prev;
-    const sign = delta > 0 ? '+' : '';
-    document.getElementById('stat-delta').textContent = sign + delta;
-    document.getElementById('stat-delta').style.color = delta > 0 ? 'var(--smart)' : delta < 0 ? 'var(--panic)' : 'var(--text)';
+  const elZone = document.getElementById('stat-zone');
+  elZone.textContent = zone.emoji + ' ' + zone.name;
+  elZone.style.color = zone.color;
+  elZone.style.fontSize = zone.name.length > 16 ? '.85rem' : '1rem';
+
+  const dd = delta24h(data);
+  const elDelta = document.getElementById('stat-delta');
+  const elDeltaLabel = document.getElementById('stat-delta-label');
+  if (!dd) {
+    elDelta.textContent = '—';
+    elDelta.style.color = 'var(--faint)';
+  } else {
+    elDelta.textContent = (dd.d > 0 ? '+' : '') + dd.d;
+    elDelta.style.color = dd.d > 0 ? 'var(--smart)' : dd.d < 0 ? 'var(--panic)' : 'var(--text)';
+    if (elDeltaLabel) elDeltaLabel.textContent = dd.label;
   }
 
-  // Badge color
-  document.getElementById('hero-badge').style.color = zone.color;
-  document.getElementById('hero-badge').style.borderColor = zone.color + '60';
-  document.getElementById('hero-badge').style.background = zone.color + '18';
+  // Badge
+  const badge = document.getElementById('hero-badge');
+  badge.style.color = zone.color;
+  badge.style.borderColor = zone.color + '60';
+  badge.style.background = zone.color + '18';
 
-  // Timestamp
+  // Lettura del segnale (dal JSON)
+  const sig = data.signal || {};
+  const reading = document.getElementById('reading');
+  reading.style.display = 'block';
+  reading.style.borderLeftColor = zone.color;
+  document.getElementById('r-head').textContent =
+    zone.emoji + ' ' + zone.name + ' · ' + (sig.stance ? sig.stance + ' — ' : '') + zone.action;
+  document.getElementById('r-reason').textContent =
+    (sig.reason ? sig.reason : 'QFI ' + qfi + '/100') +
+    (typeof data.qfi_raw === 'number' ? ' (−100/+100)' : '') +
+    (sig.suggested_position ? ' · contrarian stance ' + sig.suggested_position : '');
+  document.getElementById('r-note').textContent =
+    sig.disclaimer_en || 'Not financial advice. The QFI reads positioning; it is not a trade signal.';
+
+  // Timestamp + raw
   if (data.timestamp) {
     const d = new Date(data.timestamp);
     document.getElementById('gauge-ts').textContent = 'Updated: ' + d.toLocaleString('en-US', {
       day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit', timeZone: 'UTC'
     }) + ' UTC';
   }
+  document.getElementById('gauge-raw').textContent =
+    typeof data.qfi_raw === 'number' ? 'Scale: 0–100 · raw ' + data.qfi_raw : 'Scale: 0–100';
 
-  // Historical chart
-  const hist = data.history || [];
+  // Zone card corrente
+  document.querySelectorAll('.zone-card').forEach(c =>
+    c.classList.toggle('is-current', c.dataset.zone === zone.key));
+
+  // Componenti: valori live
+  const comps = data.components || {};
+  [['comp-rot',   ['relative_strength','rotation','rot']],
+   ['comp-smart', ['smart_money_retail','smart_money','wr']],
+   ['comp-lev',   ['derivatives_pressure','derivatives','lev']]
+  ].forEach(([id, keys]) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    let c = null;
+    for (const k of keys) if (comps[k] !== undefined) { c = comps[k]; break; }
+    if (c === null) { el.textContent = 'current: not published'; return; }
+    const v = (typeof c === 'number') ? c : c.value;
+    const det = (c && typeof c === 'object' && c.detail) ? c.detail : '';
+    el.innerHTML = 'current: <strong>' + (v > 0 ? '+' : '') + Number(v).toFixed(2) + '</strong>' +
+                   (det ? '<br><span style="opacity:.7">' + det + '</span>' : '');
+  });
+
+  // Storico: un punto al giorno, ultimi 90
+  const hist = (data.history || []).filter(h => typeof h.qfi === 'number');
+  const note = document.getElementById('chart-note');
   if (hist.length) {
-    qfiChart.data.labels = hist.map(h => {
+    const last90 = hist.slice(-90);
+    qfiChart.data.labels = last90.map(h => {
       const d = new Date(h.t || h.timestamp);
-      return d.toLocaleDateString('en-US', { day: '2-digit', month: 'short' });
+      return d.toLocaleDateString('en-US', { day: '2-digit', month: 'short', timeZone: 'UTC' });
     });
-    qfiChart.data.datasets[0].data = hist.map(h => h.qfi);
+    qfiChart.data.datasets[0].data = last90.map(h => h.qfi);
+    // con 1-2 punti la linea non si vede: mostriamo almeno i punti
+    qfiChart.data.datasets[0].pointRadius = last90.length < 4 ? 3 : 0;
     qfiChart.update();
+    note.textContent = 'History: ' + hist.length + ' daily readings' +
+      (hist.length < 30 ? ' — the chart fills in as the index runs.' : '');
+  } else {
+    note.textContent = 'No history published yet — the chart appears as soon as the archive has points.';
   }
 }
 
