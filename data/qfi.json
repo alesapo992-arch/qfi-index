@@ -1,14 +1,14 @@
 {
-  "timestamp": "2026-09-20T02:24:57.544233+00:00",
+  "timestamp": "2026-09-21T02:25:44.157639+00:00",
   "scale": "0-100",
   "version": 3,
-  "qfi": 22,
-  "qfi_display": 22,
-  "qfi_raw": -56,
+  "qfi": 26,
+  "qfi_display": 26,
+  "qfi_raw": -49,
   "zone": "panic_selling",
   "zone_label": "SPECULATIVE EUPHORIA",
   "zone_label_it": "EUFORIA SPECULATIVA",
-  "zone_emoji": "🔴",
+  "zone_emoji": "\ud83d\udd34",
   "zone_color": "#FF3B30",
   "zone_range": "0-30",
   "zone_meaning_en": "Retail greed at an extreme and altcoins outperforming BTC/ETH: crowded risk appetite.",
@@ -17,37 +17,37 @@
   "partial": false,
   "signal": {
     "signal": "SELL",
-    "emoji": "🔴",
+    "emoji": "\ud83d\udd34",
     "action": "SPECULATIVE EUPHORIA ZONE - contrarian reduce",
     "stance": "REDUCE",
     "stance_it": "RIDURRE",
     "strength": "moderate",
-    "reason": "QFI 22/100 (raw -56) <= 30",
+    "reason": "QFI 26/100 (raw -48) <= 30",
     "suggested_position": "0-30%",
     "suggested_position_note": "Rampa meccanica, non un consiglio: l'indice non ha potere predittivo dimostrato.",
-    "raw": -56,
+    "raw": -48,
     "signal_mode": "contrarian",
     "disclaimer": "Indicatore di posizionamento, non un segnale operativo. Nessun potere predittivo dimostrato: su 1.216 giorni la correlazione con il rendimento futuro del BTC e' -0,02 (7g) e -0,04 (30g).",
     "disclaimer_en": "Positioning gauge, not a trading signal. No demonstrated predictive power: over 1,216 days the rank correlation with forward BTC returns is -0.02 (7d) and -0.04 (30d)."
   },
   "components": {
     "relative_strength": {
-      "value": -0.978,
+      "value": -1.0,
       "label": "Relative Strength Rotation",
       "weight": 0.35,
       "detail": "Performance 7g BTC/ETH vs cluster speculativi (media semplice)"
     },
     "smart_money_retail": {
-      "value": -0.404,
+      "value": -0.244,
       "label": "Smart Money vs Retail",
       "weight": 0.4,
-      "detail": "Top trader ratio: 1.98 (media 30g: 2.10), F&G: 71"
+      "detail": "Top trader ratio: 2.07 (media 30g: 2.10), F&G: 70"
     },
     "derivatives_pressure": {
-      "value": -0.211,
+      "value": -0.176,
       "label": "Derivatives Pressure",
       "weight": 0.25,
-      "detail": "Funding: 0.010%, OI change: 2.7%"
+      "detail": "Funding: 0.008%, OI change: 4.7%"
     }
   },
   "drivers": [
@@ -55,22 +55,22 @@
       "type": "Rotazione speculativa",
       "direction": "bearish",
       "strength": "strong",
-      "text_it": "I cluster speculativi outperformano BTC/ETH (score: -0.98)",
-      "text_en": "Speculative clusters outperform BTC/ETH (score: -0.98)"
+      "text_it": "I cluster speculativi outperformano BTC/ETH (score: -1.00)",
+      "text_en": "Speculative clusters outperform BTC/ETH (score: -1.00)"
     },
     {
-      "type": "Distribuzione smart money",
-      "direction": "bearish",
-      "strength": "moderate",
-      "text_it": "Top trader scarichi (-5.8% vs media 30g) + retail in greed (F&G 71)",
-      "text_en": "Top traders light (-5.8% vs 30d mean) + retail in greed (F&G 71)"
+      "type": "Posizionamento allineato",
+      "direction": "neutral",
+      "strength": "weak",
+      "text_it": "Top trader e retail allineati (ratio 2.07, F&G 70)",
+      "text_en": "Top traders and retail aligned (ratio 2.07, F&G 70)"
     },
     {
       "type": "Leva bilanciata",
       "direction": "neutral",
       "strength": "weak",
-      "text_it": "Posizionamento futures equilibrato (funding 0.010%)",
-      "text_en": "Balanced futures positioning (funding 0.010%)"
+      "text_it": "Posizionamento futures equilibrato (funding 0.008%)",
+      "text_en": "Balanced futures positioning (funding 0.008%)"
     }
   ],
   "history": [
@@ -91,16 +91,29 @@
       "rot": -0.978,
       "wr": -0.404,
       "lev": -0.211
+    },
+    {
+      "t": "2026-09-20T14:25:24.168921+00:00",
+      "v": 3,
+      "qfi": 23,
+      "raw": -54,
+      "rot": -0.966,
+      "wr": -0.404,
+      "lev": -0.164
+    },
+    {
+      "t": "2026-09-21T02:25:44.157639+00:00",
+      "v": 3,
+      "qfi": 26,
+      "raw": -49,
+      "rot": -1.0,
+      "wr": -0.244,
+      "lev": -0.176
     }
   ],
   "data_quality": {
     "available_sources": 5,
     "total_sources": 5,
     "partial": false
-  },
-  "snapshot_date": "2026-09-20",
-  "snapshot_ts": "2026-09-20T02:24:57.629088+00:00",
-  "snapshot_version": 1,
-  "frozen": true,
-  "frozen_reason": "Valore del giorno bloccato alla prima esecuzione: gauge, tweet e sito pubblicano lo stesso numero per tutta la giornata."
+  }
 }
