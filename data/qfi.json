@@ -8,7 +8,7 @@
   "zone": "panic_selling",
   "zone_label": "SPECULATIVE EUPHORIA",
   "zone_label_it": "EUFORIA SPECULATIVA",
-  "zone_emoji": "\ud83d\udd34",
+  "zone_emoji": "🔴",
   "zone_color": "#FF3B30",
   "zone_range": "0-30",
   "zone_meaning_en": "Retail greed at an extreme and altcoins outperforming BTC/ETH: crowded risk appetite.",
@@ -17,7 +17,7 @@
   "partial": false,
   "signal": {
     "signal": "SELL",
-    "emoji": "\ud83d\udd34",
+    "emoji": "🔴",
     "action": "SPECULATIVE EUPHORIA ZONE - contrarian reduce",
     "stance": "REDUCE",
     "stance_it": "RIDURRE",
@@ -133,5 +133,10 @@
     "available_sources": 5,
     "total_sources": 5,
     "partial": false
-  }
+  },
+  "snapshot_date": "2026-09-22",
+  "snapshot_ts": "2026-09-22T02:26:29.768559+00:00",
+  "snapshot_version": 1,
+  "frozen": true,
+  "frozen_reason": "Valore del giorno bloccato alla prima esecuzione: gauge, tweet e sito pubblicano lo stesso numero per tutta la giornata."
 }
